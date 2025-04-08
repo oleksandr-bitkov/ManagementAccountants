@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Windows;
+using Test4.Data;
 using Test4.Services;
 using Test4.ViewModels;
 
@@ -15,6 +16,7 @@ public partial class App : Application
 
     public static IServiceProvider Services => Host.Services;
     internal static void ConfigureServices(HostBuilderContext host, IServiceCollection services) => services
+        .AddDatabase(host.Configuration.GetSection("Database"))
         .AddServices()
         .AddViewModels()
         ;
