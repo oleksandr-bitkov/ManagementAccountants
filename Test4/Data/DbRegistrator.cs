@@ -23,6 +23,7 @@ namespace Test4.Data
                 }
 
             })
+            .AddTransient<DbInitializer>()
         ;
     }
 }
