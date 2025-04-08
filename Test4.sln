@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test4", "Test4\Test4.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test4.DataAccess", "Test4.DataAccess\Test4.DataAccess.csproj", "{BD34EDE9-28A0-46DB-B3D2-FAF69AB567C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test4.Interfaces", "Test4.Interfaces\Test4.Interfaces.csproj", "{3761BE60-A73B-492E-A5B6-0BA02AFFE354}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BD34EDE9-28A0-46DB-B3D2-FAF69AB567C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD34EDE9-28A0-46DB-B3D2-FAF69AB567C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD34EDE9-28A0-46DB-B3D2-FAF69AB567C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3761BE60-A73B-492E-A5B6-0BA02AFFE354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3761BE60-A73B-492E-A5B6-0BA02AFFE354}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3761BE60-A73B-492E-A5B6-0BA02AFFE354}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3761BE60-A73B-492E-A5B6-0BA02AFFE354}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
