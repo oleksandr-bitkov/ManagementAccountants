@@ -1,18 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.RightsManagement;
-using System.Text;
-using System.Threading.Tasks;
 using Test4.DataAccess.Context;
+using Test4.DataAccess.Entityes;
 using Test4.DataAccess.Entityes.Base;
 using Test4.Interfaces;
 
 namespace Test4.DataAccess
 {
-    class DbRepository<T> : IRepository<T> where T : Entity, new()
+    internal class DbRepository<T> : IRepository<T> where T : Entity, new()
     {
         private readonly Test4DB _db;
         private readonly DbSet<T> _Set;
@@ -34,7 +28,7 @@ namespace Test4.DataAccess
         {
             if (item is null) throw new ArgumentException(nameof(item));
             _db.Entry(item).State = EntityState.Added;
-            if(AutoSaveChanges)
+            if (AutoSaveChanges)
                 _db.SaveChanges();
             return item;
         }
@@ -67,6 +61,7 @@ namespace Test4.DataAccess
 
         public void Remove(int id)
         {
+
             _db.Remove(new T { Id = id });
 
             if (AutoSaveChanges)
@@ -79,6 +74,33 @@ namespace Test4.DataAccess
 
             if (AutoSaveChanges)
                 await _db.SaveChangesAsync(Cancel).ConfigureAwait(false);
+        }
+    }
+
+    class AccountantRepository : DbRepository<Accountant>
+    {
+        public override IQueryable<Accountant> Items => base.Items.Include(item => item.Customers);
+        public AccountantRepository(Test4DB db) : base(db)
+        {
+        }
+    }
+
+    class CustomerRepository : DbRepository<Customer>
+    {
+        public override IQueryable<Customer> Items => base.Items
+            .Include(item => item.Accountant)
+            .Include(item => item.Reports);
+        public CustomerRepository(Test4DB db) : base(db)
+        {
+        }
+    }
+
+    class ReportRepository : DbRepository<Report>
+    {
+        public override IQueryable<Report> Items => base.Items
+            .Include(item => item.Customers);
+        public ReportRepository(Test4DB db) : base(db)
+        {
         }
     }
 }

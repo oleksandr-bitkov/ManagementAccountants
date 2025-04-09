@@ -8,7 +8,15 @@
         Title="{Binding Title}" 
         mc:Ignorable="d"
         Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <DockPanel>
+        <Menu IsMainMenu="True">
+            <MenuItem Header="Клієнти"/>
+            <MenuItem Header="Бухгалтери"/>
+            <MenuItem Header="Звіти"/>
+        </Menu>
+        <StatusBar>
+            <StatusBarItem>Готовий</StatusBarItem>
+        </StatusBar>
+        <Grid></Grid>
+    </DockPanel>
 </Window>

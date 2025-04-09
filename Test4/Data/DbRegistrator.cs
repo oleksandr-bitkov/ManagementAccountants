@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Test4.DataAccess;
 using Test4.DataAccess.Context;
 
 namespace Test4.Data
@@ -24,6 +25,7 @@ namespace Test4.Data
 
             })
             .AddTransient<DbInitializer>()
+            .AddRepositoriesInDb()
         ;
     }
 }

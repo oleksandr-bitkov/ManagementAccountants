@@ -5,5 +5,7 @@ namespace Test4.DataAccess.Entityes
     public class Report : NamedEntity
     {
         public virtual ICollection<Customer> Customers { get; set; }
+
+        public override string ToString() => $"Звіт [{Name} ({Id})]";
     } 
 }

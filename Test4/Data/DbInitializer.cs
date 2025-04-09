@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Test4.DataAccess.Context;
 using Test4.DataAccess.Entityes;
 
@@ -24,6 +19,7 @@ namespace Test4.Data
 
         public async Task InitializeAsync()
         {
+
             var timer = Stopwatch.StartNew();
             _Logger.LogInformation("Ініціювання БД...");
 
@@ -31,16 +27,15 @@ namespace Test4.Data
             await _db.Database.EnsureDeletedAsync().ConfigureAwait(false);
             _Logger.LogInformation("Видалення існуючої БД виконано за {0} мс", timer.ElapsedMilliseconds);
 
-
             _Logger.LogInformation("Міграція БД...");
-            await _db.Database.MigrateAsync();
+            await _db.Database.MigrateAsync().ConfigureAwait(false);
             _Logger.LogInformation("Міграція БД виконано за {0} мс", timer.ElapsedMilliseconds);
 
-            if (await _db.Customers.AnyAsync()) return;
+            if (await _db.Customers.AnyAsync().ConfigureAwait(false)) return;
 
-            await InitializeAccountants();
-            await InitializeReports();
-            await InitializeCustomers();
+            await InitializeAccountants().ConfigureAwait(false);
+            await InitializeReports().ConfigureAwait(false);
+            await InitializeCustomers().ConfigureAwait(false);
 
             _Logger.LogInformation("Ініціювання БД виконано за {0} с", timer.Elapsed.TotalSeconds);
         }

@@ -13,5 +13,7 @@ namespace Test4.DataAccess.Entityes
     {
         public virtual Accountant Accountant { get; set; }
         public virtual ICollection<Report> Reports { get; set; }
+
+        public override string ToString() => $"Кліент [{Name} {Surname} {Patronymic} ({Id})]";
     }
 }
