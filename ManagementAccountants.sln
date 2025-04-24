@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagementAccountants", "Test4\ManagementAccountants.csproj", "{11D93620-A26A-4569-A420-191D775B364A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagementAccountants", "ManagementAccountants\ManagementAccountants.csproj", "{11D93620-A26A-4569-A420-191D775B364A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagementAccountants.DataAccess", "Test4.DataAccess\ManagementAccountants.DataAccess.csproj", "{BD34EDE9-28A0-46DB-B3D2-FAF69AB567C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagementAccountants.DataAccess", "ManagementAccountants.DataAccess\ManagementAccountants.DataAccess.csproj", "{BD34EDE9-28A0-46DB-B3D2-FAF69AB567C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagementAccountants.Interfaces", "Test4.Interfaces\ManagementAccountants.Interfaces.csproj", "{3761BE60-A73B-492E-A5B6-0BA02AFFE354}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagementAccountants.Interfaces", "ManagementAccountants.Interfaces\ManagementAccountants.Interfaces.csproj", "{3761BE60-A73B-492E-A5B6-0BA02AFFE354}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
