@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Test4.Interfaces\Test4.Interfaces.csproj" />
+    <ProjectReference Include="..\Test4.Interfaces\ManagementAccountants.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

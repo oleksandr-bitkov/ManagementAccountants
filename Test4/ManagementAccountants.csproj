@@ -12,7 +12,6 @@
   <ItemGroup>
     <Folder Include="Infrastructure\Commands\" />
     <Folder Include="Models\" />
-    <Folder Include="Templates\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Test4.DataAccess\Test4.DataAccess.csproj" />
+    <ProjectReference Include="..\Test4.DataAccess\ManagementAccountants.DataAccess.csproj" />
   </ItemGroup>
 
   <ItemGroup>
